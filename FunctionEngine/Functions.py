@@ -10,7 +10,7 @@ def return_term(input) -> Term:
 def generic_function(function, args, formatting, bracketting_operations = [], operation = Operations.OTHER) -> Equation:
     args_term = [return_term(arg) for arg in args]
     args_val = [arg.value for arg in args_term]
-    result_val = function(*args)
+    result_val = function(*args_val)
     
     output_formats = Term._build_formatting(args_term, formatting, bracketting_operations)
 

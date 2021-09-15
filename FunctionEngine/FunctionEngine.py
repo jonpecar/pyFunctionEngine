@@ -47,6 +47,9 @@ class Term:
     def result_value(self, format : FormatTypes):
         return self.symbol + ' = ' + self.formatted_value(format)
         
+    @property
+    def magnitude(self):
+        return self.value.magnitude
 
     @property
     def _formatted_types(self):
