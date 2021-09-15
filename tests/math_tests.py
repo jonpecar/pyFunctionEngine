@@ -47,6 +47,15 @@ class arithmeticTests(unittest.TestCase):
         self.assertEqual((a ** Term(b)).magnitude, a ** b)
         self.assertEqual((Term(a) ** Term(b)).magnitude, a ** b)
 
+    
+    def test_sqrt(self):
+        a = 2
+
+        self.assertEqual((sqrt(Term(a))).magnitude, a**0.5)
+        self.assertEqual((sqrt(a)).magnitude, a**0.5)
+
+class trigonometricTests(unittest.TestCase):
+
     def test_cos(self):
         a = 1.23456
 
@@ -88,9 +97,4 @@ class arithmeticTests(unittest.TestCase):
         self.assertEqual((asin(Term(a))).magnitude, np.arcsin(a))
         self.assertEqual((asin(a)).magnitude, np.arcsin(a))
 
-    def test_sqrt(self):
-        a = 2
-
-        self.assertEqual((sqrt(Term(a))).magnitude, a**0.5)
-        self.assertEqual((sqrt(a)).magnitude, a**0.5)
 
